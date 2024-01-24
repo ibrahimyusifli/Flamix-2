@@ -1,0 +1,57 @@
+﻿@model List<Product>
+@{
+    int count = 0;
+}
+<div class="card-body">
+    <h4 class="card-title">Product Table</h4>
+    <a asp-controller="" class="btn btn-success">Create</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        No
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Icon
+                    </th>
+                    <th>
+                        Settings
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+             @foreach (Product product in Model)
+                {
+                    count++;
+                    <tr>
+                        <td class="py-1">
+                           @count
+                        </td>
+                        <td>
+                            @product.Name
+                        </td>
+                        <td>
+                            @product.Description
+                        </td>
+                        <td>
+                           @product.Icon
+                        </td>
+                        <td>
+                            <a class="btn btn-warning btn-info">Update</a>
+                            <a class="btn btn-danger btn-info">Delete</a>
+                        </td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
